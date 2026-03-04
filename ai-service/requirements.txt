@@ -1,0 +1,11 @@
+
+fastapi
+uvicorn[standard]
+python-multipart
+pillow
+httpx
+requests
+qdrant-client
+sentence-transformers
+psycopg2-binary
+python-dotenv

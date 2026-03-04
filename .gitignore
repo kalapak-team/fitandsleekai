@@ -1,0 +1,50 @@
+# Root-level ignores
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.log
+
+# Env files
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+venv312/
+*.venv
+.pytest_cache/
+.coverage
+coverage.xml
+
+# Node
+node_modules/
+dist/
+build/
+.parcel-cache/
+.turbo/
+
+# Laravel
+vendor/
+storage/*.key
+storage/app/public
+storage/framework/*
+storage/logs/*
+
+# Local scripts / dumps
+setup.sh
+setup.bat
+*.sql
+IMAGE_SEARCH_*
+ai-service/__pycache__/
+# AI service caches
+ai-service/__pycache__/
+fitandsleekpro-2cc88317a04d.json
+
+frontend/localhost*.pem
+
+.env

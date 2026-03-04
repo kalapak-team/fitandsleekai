@@ -1,0 +1,16 @@
+node_modules
+vendor
+storage/app
+storage/framework/cache
+storage/framework/sessions
+storage/framework/views
+storage/logs
+.env
+.env.*
+.git
+.gitignore
+.idea
+.vscode
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
