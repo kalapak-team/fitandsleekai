@@ -1,16 +1,17 @@
 FROM python:3.12-slim
 
-# psycopg2 build deps
-RUN apt-get update \
-    && apt-get install -y --no-install-recommends libpq-dev gcc \
-    && rm -rf /var/lib/apt/lists/*
+# ដំឡើង dependencies សម្រាប់ PostgreSQL និង GCC
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    libpq-dev gcc && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /app
 
-COPY requirements.txt /app/requirements.txt
-RUN pip install --no-cache-dir -r /app/requirements.txt
+# ចម្លង requirements និងដំឡើង (ប្រើ numpy<2.0.0 ដើម្បីកុំឱ្យ Error)
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
 
-COPY . /app
+# ចម្លងកូដទាំងអស់ចូល
+COPY . .
 
-EXPOSE 8000
-CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
+# សំខាន់៖ Hugging Face ប្រើ Port 7860 ជា Default
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "7860"]
